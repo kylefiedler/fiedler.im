@@ -1,0 +1,82 @@
+header {
+  background-color: gray;
+  background-image: url("/images/family.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2vh 0 74vh 18em;
+  position: relative;
+  text-align: center;
+
+  h1 {
+    font-size: 6em;
+    color: white;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-family: $base-font-family;
+    font-size: 1.25em;
+    font-weight: normal;
+    margin-top: -0.5em;
+    margin-left: 7em;
+  }
+}
+
+article {
+  @include row(table);
+  padding: 0.25em 0 0;
+
+  div {
+    @include span-columns(6, table);
+    vertical-align: middle;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.content {
+  padding: 5em;
+  position: relative;
+
+  &:after {
+    @include position(absolute, 0.5em 0.5em 0.5em 0.5em);
+    border: .5em solid #6cab7b;
+    content: "";
+    display: block;
+    pointer-events: none;
+  }
+
+  h1 {
+    font-size: 3.5em;
+    color: $base-accent-color;
+
+    &:after {
+      background-color: #eadec4;
+      content: "";
+      display: block;
+      height: 2px;
+      margin-bottom: .5em;
+      margin-top: .75em;
+      width: 1.5em;
+    }
+  }
+
+  p {
+    font-size: em(18);
+    max-width: em(500);
+  }
+}
+
+.image-row {
+  @include row;
+
+  img {
+    @include span-columns(4);
+
+    .kyle-jess + & {
+      @include span-columns(3);
+    }
+  }
+}
